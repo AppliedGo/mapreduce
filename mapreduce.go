@@ -91,7 +91,7 @@ Second, and more importantly, if the mapped function `fn` does not depend on pre
 
 How to do this? Simple: Split the list into *n* pieces and pass them to *n* independently running mappers. Next, have the mappers run on separate CPU cores, or even on separate CPU's.
 
-Imagine the speed boost you'll get. Map and reduce, as it seems, form a fundamental concept for distributed loops.
+Imagine the speed boost you'll get. Map and reduce, as it seems, form a fundamental concept for efficient distributed loops.
 
 > Lemme repeat that. By abstracting away the very concept of looping, you can implement looping any way you want, including implementing it in a way that scales nicely with extra hardware.
 >
@@ -100,7 +100,9 @@ Imagine the speed boost you'll get. Map and reduce, as it seems, form a fundamen
 
 ## From map and reduce to MapReduce
 
-Google researchers were reportedly the first who took the map/reduce concept and scaled it up to "Web search engine level" (I leave the exact definition of "Web search engine level" as an exercise for the reader). MapReduce was born.
+Google researchers took the map/reduce concept and scaled it up to search engine level (I leave the exact definition of "search engine level" as an exercise for the reader). [MapReduce was born](http://research.google.com/archive/mapreduce.html).
+
+The result was a higly scalable, fault-tolerant data processing framework with the two functions `map()` and `reduce()` at its core.
 
 Here is how it works.
 
