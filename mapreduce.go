@@ -19,8 +19,8 @@ title = "MapReduce - munching through Big Data"
 description = "The essence of the MapReduce algorithm, explained in Go"
 author = "Christoph Berger"
 email = "chris@appliedgo.net"
-date = "2016-11-28"
-publishdate = "2016-11-28"
+date = "2016-12-02"
+publishdate = "2016-12-02"
 draft = "false"
 domains = ["Big Data"]
 tags = ["mapreduce", "parallelization", "data processing", "performance"]
@@ -30,6 +30,8 @@ categories = ["Tutorial"]
 How Google tackled the problem of processing enormous amounts of data, and how you can do the same with Go.
 
 <!--more-->
+
+*It's been a while since the last post, and I have to apologize for the long wait. The last weeks have been quite busy, but I finally managed to complete another article. I hope you'll enjoy it.*
 
 ## Map and Reduce
 
@@ -316,7 +318,7 @@ func outputWriter(in []<-chan float32) {
 func main() {
 	// Set up all channels used for passing data between the workers.
 	//
-	// This is quite silly; I could have used loops instead, to create arrays or
+	// I could have used loops instead, to create arrays or
 	// slices of channels. Apparently, copy/paste has won.
 	size := 10
 	text1 := make(chan string, size)
@@ -345,7 +347,7 @@ func main() {
 
 /*
 
-The code is `go get`able. Ensure to use -d so that the binary does not make it into `$GOPATH/bin`.
+The code is `go get`able from [GitHub](github.com/appliedgo/mapreduce). Ensure to use -d so that the binary does not make it into `$GOPATH/bin`.
 
 	go get -d github.com/appliedgo/mapreduce
 	cd $GOPATH/github.com/appliedgo/mapreduce
@@ -353,6 +355,7 @@ The code is `go get`able. Ensure to use -d so that the binary does not make it i
 
 This code also runs in the [Go Playground](https://play.golang.org/p/cipGuzMNT3).
 
+Homework assignment 😉: Add logging to the code to visualize the control flow. I intentionally did not add logging statements to keep the code easy to read.
 
 
 */
