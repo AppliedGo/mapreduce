@@ -22,9 +22,9 @@ email = "chris@appliedgo.net"
 date = "2016-12-02"
 publishdate = "2016-12-02"
 draft = "false"
-domains = ["Big Data"]
+categories = ["Big Data"]
 tags = ["mapreduce", "parallelization", "data processing", "performance"]
-categories = ["Tutorial"]
+articletypes = ["Tutorial"]
 +++
 
 How Google tackled the problem of processing enormous amounts of data, and how you can do the same with Go.
